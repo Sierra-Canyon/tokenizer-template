@@ -84,7 +84,7 @@ nvm_dir = os.environ.get("NVM_DIR") or os.path.expanduser("~/.nvm")
 record("nvm (Node version manager)",
        OK if os.path.isdir(nvm_dir) else FAIL,
        nvm_dir if os.path.isdir(nvm_dir) else "not found",
-       "brew install nvm, then add the two lines brew prints to your ~/.zshrc and open a "
+       "brew install nvm, then add the two lines brew prints to your ~/.bash_profile and open a "
        "NEW terminal. nvm is a shell function, so `which nvm` finds nothing even when it works.")
 
 # ---- API key
