@@ -1,9 +1,16 @@
-# Honors Software Engineering — student workspace
+# Tokenizer — Honors Software Engineering
 
 **Section C-JD · Period C · Room U 108 · 2026–27**
 
-One repository for the year. Every assignment writes into it, `git log` tells the whole
-story by May, and it is the thing you hand a stranger at the symposium.
+One repository per project, and this is the tokenizer. It covers A01 (environment
+bring-up), A03 (measuring a real tokenizer) and A04 (building your own). When the
+tokenizer is done this repo is done: the RAG project, the GPT build and the capstone
+each get their own repository, cloned the same way.
+
+That means the setup you do here is setup you will do again. Git hooks live in
+`.git/hooks/` and do not travel with a clone, so the secret guard you install today
+protects this repo and nothing else. Every project template ships its own `setup.sh`
+for exactly that reason.
 
 ---
 
@@ -29,6 +36,7 @@ brew install uv nvm
 
 | Path | What |
 |---|---|
+| `SETUP.md` | A01. You write this one. Your time-to-run and every error you hit. |
 | `notebooks/01_tokenizer_probe.ipynb` | A03. Measure a real tokenizer before you build one. |
 | `notebooks/02_bpe_from_scratch.ipynb` | A04. Drive your own tokenizer and compare the two. |
 | `bpe/tokenizer.py` | A04. **The file you write.** Four functions and two classes. |
@@ -65,7 +73,7 @@ wrong answer:
   mid-merge is often not valid UTF-8. Know why `errors="replace"` is correct rather than
   a workaround; you will be asked.
 
-## Rules that apply all year
+## Rules that apply in every repo you open this year
 
 **Never commit a key.** The secret guard blocks the obvious cases. It is not a substitute
 for knowing where your key is. If you ever push one, tell me the same day: there is no
