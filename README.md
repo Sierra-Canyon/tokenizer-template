@@ -32,6 +32,31 @@ If `./setup.sh` says `uv: command not found`, you skipped A01's first line:
 brew install uv nvm
 ```
 
+## Opening the notebooks
+
+A notebook is not run from the terminal. Open the repo in VS Code with `code .`, open the
+`.ipynb` from the sidebar, then click **Select Kernel** at the top right and choose
+**Python Environments → the one whose path contains `.venv`**, inside this repo.
+
+VS Code otherwise picks a system Python, and everything `uv` installed will be missing. The
+symptom is `ModuleNotFoundError` on a package you just watched install successfully. Confirm
+the kernel in one line before you trust it:
+
+```python
+import sys; print(sys.executable)
+```
+
+That path must end in `.venv/bin/python`, or `.venv\Scripts\python.exe` on Windows.
+
+If the kernel picker will not cooperate, this repo already ships JupyterLab:
+
+```
+uv run jupyter lab
+```
+
+It opens in your browser with the right environment already selected, because it is the only
+one there. Either tool is fine.
+
 ## What is where
 
 | Path | What |

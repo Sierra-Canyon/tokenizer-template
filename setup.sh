@@ -32,7 +32,25 @@ cat <<'EOF'
 Setup done. Two things to verify yourself, because a filter that silently did not
 install is worse than no filter:
 
-  1. Open notebooks/01_tokenizer_probe.ipynb, run one cell, save it, then:
+  1. Open the notebook and check the git filter.
+
+     A notebook is not run from the terminal. Open the repo in VS Code:
+         code .
+     then open notebooks/01_tokenizer_probe.ipynb from the sidebar. Accept the
+     Python and Jupyter extensions if VS Code offers them.
+
+     Click "Select Kernel" (top right) -> Python Environments -> the one whose
+     path contains .venv, inside this repo. VS Code otherwise picks a system
+     Python, and every import you installed with uv will be missing. Confirm it
+     in the first cell:
+         import sys; print(sys.executable)
+     That path must end in .venv/bin/python (Windows: .venv\Scripts\python.exe).
+
+     If the kernel picker will not cooperate, this repo already ships JupyterLab:
+         uv run jupyter lab
+     opens in your browser with the right environment already selected.
+
+     Then run one cell, SAVE the notebook, and:
          git diff --stat
      You should see your source change and NOT thousands of output lines.
 

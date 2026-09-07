@@ -2,3 +2,9 @@
 # without that filter installed these files are committed unchanged, which is why
 # setup.sh asks you to verify it took.
 *.ipynb filter=nbstrip
+
+# Shell scripts stay LF on every platform. Git for Windows defaults to
+# core.autocrlf=true, which rewrites these to CRLF on checkout, and then bash
+# fails with "bad interpreter: /bin/bash^M" — an error that names the shell
+# rather than the line endings and sends you looking in the wrong place.
+*.sh text eol=lf

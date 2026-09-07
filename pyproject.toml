@@ -1,5 +1,5 @@
 [project]
-name = "swe-2627"
+name = "hse-tokenizer"
 version = "0.1.0"
 description = "Honors Software Engineering 2026-27 — student workspace"
 requires-python = ">=3.12,<3.13"   # tiktoken has no 3.13 wheels; see A01
